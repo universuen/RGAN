@@ -1,5 +1,5 @@
 import context
-from app.logger import Logger
+from src.logger import Logger
 
 
 def test_debug():
