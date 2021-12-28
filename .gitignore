@@ -11,3 +11,4 @@ venv/
 
 # space-intensive data
 data/
+plots/
