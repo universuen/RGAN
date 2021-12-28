@@ -9,6 +9,7 @@ plots: Path = project / 'plots'
 datasets: Path = data / 'datasets'
 raw_datasets: Path = datasets / 'raw'
 processed_datasets: Path = datasets / 'processed'
+models: Path = data / 'models'
 
 for i in list(vars().values()):
     if isinstance(i, Path):

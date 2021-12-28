@@ -97,3 +97,12 @@ def get_final_test_metrics(statistics: dict):
 
 def normalize(x: torch.Tensor) -> torch.Tensor:
     return minmax_scale(x)
+
+
+def prob2label(prob):
+    probabilities = prob.squeeze(dim=1)
+    labels = np.zeros(probabilities.size())
+    for i, p in enumerate(probabilities):
+        if p >= 0.5:
+            labels[i] = 1
+    return torch.from_numpy(labels)

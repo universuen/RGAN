@@ -10,7 +10,6 @@ from sklearn.datasets import make_classification
 from src import config, utils
 from src.datasets import FullDataset, MinorityRouletteDataset
 
-DATASET = 'vehicle1.dat'
 RATIO = 0.1
 
 if __name__ == '__main__':
@@ -31,7 +30,7 @@ if __name__ == '__main__':
 
     r_dataset = MinorityRouletteDataset()
     utils.set_random_state()
-    r_features, r_labels = r_dataset.roulette_choices(int(RATIO * len(r_dataset)))
+    r_features, r_labels = r_dataset.get_roulette_choices(int(RATIO * len(r_dataset)))
     features = np.append(features, r_features, axis=0)
     types.extend(['Roulette' for _ in r_labels])
 
